@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* ---------- Base typography (luxury catalog) ---------- */
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  /* Small labels, breadcrumbs, filters */
+  .luxury-caps-label {
+    @apply text-xs font-light uppercase tracking-widest;
+  }
+
+  /* Buttons / larger caps — same lettering, size from utilities (e.g. text-sm) */
+  .luxury-caps-cta {
+    @apply font-light uppercase tracking-widest;
+  }
+}
+
+/* ---------- Theme Variables ---------- */
+
+:root {
+  --background: #f3efe6;
+  --foreground: #1a1a1a;
+
+  --green-primary: #0f3d2e;
+  --green-secondary: #134e3a;
+  --gold: #c9a46c;
+}
+
+/* Tailwind v4 theme tokens */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-playfair);
+}
+
+/* ---------- Base Layout ---------- */
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Serif font helper */
+
+.font-serif {
+  font-family: var(--font-playfair), Georgia, "Times New Roman", serif;
+}
+
+/* ---------- Hero Section (Home) ---------- */
+
+.hero-section-outer {
+  width: 100%;
+}
+
+.hero-section-inner {
+  width: 100%;
+
+  background: linear-gradient(
+    135deg,
+    var(--green-primary),
+    var(--green-secondary)
+  );
+
+  border-radius: 0 0 60px 60px;
+
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .hero-section-inner {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
+}
+
+/* ---------- Page Hero (Products / Contact) ---------- */
+
+.page-hero-outer {
+  width: 100%;
+}
+
+.page-hero-inner {
+  width: 100%;
+
+  background: linear-gradient(
+    135deg,
+    var(--green-primary),
+    var(--green-secondary)
+  );
+
+  border-radius: 0 0 60px 60px;
+
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  min-height: 320px;
+
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .page-hero-inner {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
