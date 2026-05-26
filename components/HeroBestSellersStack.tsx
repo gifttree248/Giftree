@@ -89,16 +89,6 @@ function HeroCard({
 export function HeroBestSellersStack({ products }: HeroBestSellersStackProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  if (!products.length) {
-    return (
-      <div className="relative aspect-[4/3] w-full max-w-lg overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-[#0f3d2e]/5">
-        <div className="flex h-full w-full items-center justify-center bg-[#F3EFE6] text-[#0f3d2e]/50">
-          Best sellers will appear here
-        </div>
-      </div>
-    );
-  }
-
   useEffect(() => {
     if (products.length <= 1) return;
 
@@ -108,6 +98,16 @@ export function HeroBestSellersStack({ products }: HeroBestSellersStackProps) {
 
     return () => window.clearInterval(timer);
   }, [products.length]);
+
+  if (!products.length) {
+    return (
+      <div className="relative aspect-[4/3] w-full max-w-lg overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-[#0f3d2e]/5">
+        <div className="flex h-full w-full items-center justify-center bg-[#F3EFE6] text-[#0f3d2e]/50">
+          Best sellers will appear here
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative flex w-full justify-center lg:justify-end">

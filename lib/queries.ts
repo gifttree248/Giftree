@@ -58,23 +58,6 @@ export const allProductsQuery = `
 }
 `;
 
-export const productsByCategoryQuery = `
-*[_type == "product" && category->slug.current == $categorySlug] | order(_createdAt desc){
-  _id,
-  title,
-  shortDescription,
-  description,
-  "slug": slug.current,
-  "image": images[0],
-  "category": category->{
-    _id,
-    name,
-    "slug": slug.current
-  },
-  isFeatured
-}
-`;
-
 export const productBySlugQuery = `
 *[_type == "product" && slug.current == $slug][0]{
   _id,

@@ -180,7 +180,7 @@ export default async function HomePage() {
               </span>
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-[#0f3d2e]/70 sm:mt-5 sm:text-[1.12rem]">
-              We don't just send gifts. We craft memorable experiences that strengthen your most valuable business relationships.
+              We don&apos;t just send gifts. We craft memorable experiences that strengthen your most valuable business relationships.
             </p>
           </div>
 
