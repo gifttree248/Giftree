@@ -140,3 +140,11 @@ body {
     padding-bottom: 8rem;
   }
 }
+
+/* Fixed navbar clearance — product detail pages (mobile only) */
+
+@media (max-width: 768px) {
+  .product-page-section {
+    padding-top: 4.375rem; /* 70px — matches fixed navbar height */
+  }
+}
